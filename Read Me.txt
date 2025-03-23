@@ -1,0 +1,76 @@
+
+# Predicting Credit Card Consumption
+
+## 📌 Objective
+The goal of this project is to predict the average credit card spend of customers for the next three months using their demographic and behavioral data.
+
+---
+
+## 📁 Dataset Overview
+The project is based on three datasets provided by a leading bank:
+1. **CustomerDemographics.xlsx** – Contains customer demographic info (e.g., age, gender, income).
+2. **CustomerBehaviorData.xlsx** – Details on past credit/debit card usage, loans, and transactions.
+3. **CreditConsumptionData.xlsx** – Target variable (`cc_cons`) - average credit card consumption for the upcoming 3 months.
+
+---
+
+## 🧪 Methodology
+
+### 1. Data Merging & Cleaning
+- All datasets merged using `ID`.
+- Missing values imputed:
+  - Numeric: Median
+  - Categorical: Mode
+- Target variable (`cc_cons`) has 5,000 missing values – prediction required for these.
+
+### 2. Exploratory Data Analysis (EDA)
+- Distribution plots, boxplots, and scatterplots used to analyze patterns in credit consumption.
+- Found skewed distribution with spending differences across income groups and no strong age correlation.
+
+### 3. Feature Engineering
+- Categorical features: One-Hot Encoded.
+- Numeric features: Standard preprocessing applied.
+- Columns like `loan_enq` and investment flags treated as categorical.
+
+### 4. Model Building
+- **Model Used**: RandomForestRegressor
+- **Validation Split**: 80-20 Train-Test
+- **Metric**: RMSPE (Root Mean Square Percentage Error)
+
+### 5. Model Evaluation
+- Achieved RMSPE of ~28.83% on validation data.
+- Model found to be reliable for predictions in this context.
+
+---
+
+## 📈 Results
+- Predicted values for 5,000 customers with missing `cc_cons` provided.
+- Sample predictions included in notebook.
+
+---
+
+## 🧾 Files Included
+- `Predicting_Credit_Consumption_Capstone.ipynb`: Jupyter notebook with all code and visualizations.
+- `CustomerDemographics.xlsx`, `CustomerBehaviorData.xlsx`, `CreditConsumptionData.xlsx`: Input datasets.
+- `Predicted_cc_cons.csv` (optional): Output predictions for missing targets.
+
+---
+
+## 🔧 Dependencies
+- Python 3.8+
+- pandas, numpy, matplotlib, seaborn
+- scikit-learn
+- openpyxl (for reading Excel files)
+
+---
+
+## ✅ How to Run
+1. Open `Predicting_Credit_Consumption_Capstone.ipynb` in Jupyter Notebook.
+2. Run the cells sequentially.
+3. Ensure all dataset files are in the same directory as the notebook.
+
+---
+
+## 📬 Contact
+For queries or improvements, please contact [YourName/Team] at [your-email@example.com].
+
